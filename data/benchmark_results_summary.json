@@ -1,0 +1,276 @@
+{
+  "raw_record_count": 1200,
+  "dedup_unique_count": 599,
+  "leaked_split": "960 Train / 240 Test (80/20)",
+  "dedup_split": "479 Train / 120 Test (80/20)",
+  "sqlite_table_counts": {
+    "crash_records": 599,
+    "model_benchmarks": 60,
+    "policy_simulations": 40
+  },
+  "kinetic_cliff_profile": {
+    "total_records": 599.0,
+    "high_speed_total": 212.0,
+    "high_speed_surv_rate": 0.0,
+    "low_speed_total": 387.0,
+    "low_speed_surv_rate": 48.837209302325576,
+    "unrestrained_surv_rate": 23.762376237623762,
+    "helmet_only_surv_rate": 52.74725274725275,
+    "seatbelt_only_surv_rate": 57.47126436781609,
+    "both_restraints_surv_rate": 62.03703703703704
+  },
+  "rq1_rq2_model_metrics": [
+    {
+      "model_name": "Rule-Based Decision Tree",
+      "regime": "Cross-Fold 80/20 (N=1200)",
+      "tp": 51,
+      "fp": 15,
+      "tn": 149,
+      "fn": 25,
+      "accuracy_pct": 83.33,
+      "precision_pct": 77.27,
+      "recall_pct": 67.11,
+      "specificity_pct": 90.85,
+      "f1_pct": 71.83,
+      "train_time_ms": 11.874
+    },
+    {
+      "model_name": "Weighted Linear Score",
+      "regime": "Cross-Fold 80/20 (N=1200)",
+      "tp": 37,
+      "fp": 20,
+      "tn": 144,
+      "fn": 39,
+      "accuracy_pct": 75.42,
+      "precision_pct": 64.91,
+      "recall_pct": 48.68,
+      "specificity_pct": 87.8,
+      "f1_pct": 55.64,
+      "train_time_ms": 351.904
+    },
+    {
+      "model_name": "Subgroup Rate Average",
+      "regime": "Cross-Fold 80/20 (N=1200)",
+      "tp": 29,
+      "fp": 23,
+      "tn": 141,
+      "fn": 47,
+      "accuracy_pct": 70.83,
+      "precision_pct": 55.77,
+      "recall_pct": 38.16,
+      "specificity_pct": 85.98,
+      "f1_pct": 45.31,
+      "train_time_ms": 0.218
+    },
+    {
+      "model_name": "Rule-Based Decision Tree",
+      "regime": "Deduplicated 80/20 (N=599)",
+      "tp": 30,
+      "fp": 18,
+      "tn": 64,
+      "fn": 8,
+      "accuracy_pct": 78.33,
+      "precision_pct": 62.5,
+      "recall_pct": 78.95,
+      "specificity_pct": 78.05,
+      "f1_pct": 69.77,
+      "train_time_ms": 3.678
+    },
+    {
+      "model_name": "Weighted Linear Score",
+      "regime": "Deduplicated 80/20 (N=599)",
+      "tp": 17,
+      "fp": 9,
+      "tn": 73,
+      "fn": 21,
+      "accuracy_pct": 75.0,
+      "precision_pct": 65.38,
+      "recall_pct": 44.74,
+      "specificity_pct": 89.02,
+      "f1_pct": 53.12,
+      "train_time_ms": 169.22
+    },
+    {
+      "model_name": "Subgroup Rate Average",
+      "regime": "Deduplicated 80/20 (N=599)",
+      "tp": 21,
+      "fp": 22,
+      "tn": 60,
+      "fn": 17,
+      "accuracy_pct": 67.5,
+      "precision_pct": 48.84,
+      "recall_pct": 55.26,
+      "specificity_pct": 73.17,
+      "f1_pct": 51.85,
+      "train_time_ms": 0.076
+    }
+  ],
+  "policy_simulations": [
+    {
+      "scenario_name": "Baseline Uncapped Traffic (119 km/h, Current Compliance)",
+      "cohort_size": 599,
+      "max_speed_cap": 119,
+      "helmet_rate_pct": 50.0,
+      "seatbelt_rate_pct": 50.0,
+      "baseline_fatalities": 410.5,
+      "projected_fatalities": 346.7,
+      "lives_saved": 63.8,
+      "fatality_reduction_pct": 15.53
+    },
+    {
+      "scenario_name": "Provincial Highway Cap (85 km/h + 85% Restraint Mandate)",
+      "cohort_size": 599,
+      "max_speed_cap": 85,
+      "helmet_rate_pct": 85.0,
+      "seatbelt_rate_pct": 85.0,
+      "baseline_fatalities": 410.5,
+      "projected_fatalities": 173.3,
+      "lives_saved": 237.2,
+      "fatality_reduction_pct": 57.78
+    },
+    {
+      "scenario_name": "Urban Safe-Corridor Policy (80 km/h Cap + 95% Seatbelt / 90% Helmet)",
+      "cohort_size": 599,
+      "max_speed_cap": 80,
+      "helmet_rate_pct": 90.0,
+      "seatbelt_rate_pct": 95.0,
+      "baseline_fatalities": 410.5,
+      "projected_fatalities": 160.6,
+      "lives_saved": 249.9,
+      "fatality_reduction_pct": 60.87
+    },
+    {
+      "scenario_name": "Vision Zero City Zone (60 km/h Cap + 98% Full Restraint Mandate)",
+      "cohort_size": 599,
+      "max_speed_cap": 60,
+      "helmet_rate_pct": 98.0,
+      "seatbelt_rate_pct": 98.0,
+      "baseline_fatalities": 410.5,
+      "projected_fatalities": 150.1,
+      "lives_saved": 260.4,
+      "fatality_reduction_pct": 63.44
+    }
+  ],
+  "rq3_scaling_benchmarks": [
+    {
+      "algorithm": "Linear Search (while)",
+      "complexity": "O(N)",
+      "N": 600,
+      "K": 100,
+      "elapsed_ms": 4.1897,
+      "peak_memory_kb": 137.4,
+      "comparisons": 60000,
+      "passes_60fps": true
+    },
+    {
+      "algorithm": "MergeSort + Binary Search",
+      "complexity": "O(log N)",
+      "N": 600,
+      "K": 100,
+      "elapsed_ms": 0.2122,
+      "peak_memory_kb": 140.2,
+      "comparisons": 1800,
+      "passes_60fps": true
+    },
+    {
+      "algorithm": "Dictionary Hash Lookup",
+      "complexity": "O(1)",
+      "N": 600,
+      "K": 100,
+      "elapsed_ms": 0.0107,
+      "peak_memory_kb": 156.5,
+      "comparisons": 100,
+      "passes_60fps": true
+    },
+    {
+      "algorithm": "Linear Search (while)",
+      "complexity": "O(N)",
+      "N": 5000,
+      "K": 100,
+      "elapsed_ms": 37.488,
+      "peak_memory_kb": 1202.1,
+      "comparisons": 500000,
+      "passes_60fps": false
+    },
+    {
+      "algorithm": "MergeSort + Binary Search",
+      "complexity": "O(log N)",
+      "N": 5000,
+      "K": 100,
+      "elapsed_ms": 0.3138,
+      "peak_memory_kb": 1226.1,
+      "comparisons": 2400,
+      "passes_60fps": true
+    },
+    {
+      "algorithm": "Dictionary Hash Lookup",
+      "complexity": "O(1)",
+      "N": 5000,
+      "K": 100,
+      "elapsed_ms": 0.0097,
+      "peak_memory_kb": 1354.1,
+      "comparisons": 100,
+      "passes_60fps": true
+    },
+    {
+      "algorithm": "Linear Search (while)",
+      "complexity": "O(N)",
+      "N": 20000,
+      "K": 100,
+      "elapsed_ms": 156.4029,
+      "peak_memory_kb": 4849.2,
+      "comparisons": 2000000,
+      "passes_60fps": false
+    },
+    {
+      "algorithm": "MergeSort + Binary Search",
+      "complexity": "O(log N)",
+      "N": 20000,
+      "K": 100,
+      "elapsed_ms": 0.5374,
+      "peak_memory_kb": 4946.2,
+      "comparisons": 2800,
+      "passes_60fps": true
+    },
+    {
+      "algorithm": "Dictionary Hash Lookup",
+      "complexity": "O(1)",
+      "N": 20000,
+      "K": 100,
+      "elapsed_ms": 0.01,
+      "peak_memory_kb": 5457.3,
+      "comparisons": 100,
+      "passes_60fps": true
+    },
+    {
+      "algorithm": "Linear Search (while)",
+      "complexity": "O(N)",
+      "N": 50000,
+      "K": 100,
+      "elapsed_ms": 383.0354,
+      "peak_memory_kb": 12162.2,
+      "comparisons": 5000000,
+      "passes_60fps": false
+    },
+    {
+      "algorithm": "MergeSort + Binary Search",
+      "complexity": "O(log N)",
+      "N": 50000,
+      "K": 100,
+      "elapsed_ms": 0.9755,
+      "peak_memory_kb": 12405.5,
+      "comparisons": 3100,
+      "passes_60fps": true
+    },
+    {
+      "algorithm": "Dictionary Hash Lookup",
+      "complexity": "O(1)",
+      "N": 50000,
+      "K": 100,
+      "elapsed_ms": 0.2938,
+      "peak_memory_kb": 14978.3,
+      "comparisons": 100,
+      "passes_60fps": true
+    }
+  ]
+}

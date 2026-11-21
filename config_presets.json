@@ -1,0 +1,48 @@
+{
+  "application_title": "SafeRoad-ML Policy Workbench v1.0 (COS10009 HD Band 2)",
+  "student_author": "Anh Vu Pham (ID: 106217835)",
+  "unit_code": "COS10009 Introduction to Programming",
+  "campus": "Swinburne Vietnam - Can Tho Campus",
+  "unit_coordinator": "Mr. Quach Huu Nghia (hquach@swin.edu.au)",
+  "sqlite_db_path": "data/traffic_policy.db",
+  "dataset_files": [
+    {"path": "data/accident_2025_train1_73.csv", "delimiter": ",", "tag": "train1_csv"},
+    {"path": "data/accident_2025_test1_73.csv", "delimiter": ",", "tag": "test1_csv"},
+    {"path": "data/accident_2025_train2_73.csv", "delimiter": ",", "tag": "train2_csv"},
+    {"path": "data/accident_2025_test2_73.csv", "delimiter": ",", "tag": "test2_csv"},
+    {"path": "data/accident_2025_test2_73.txt", "delimiter": "\t", "tag": "test2_txt"}
+  ],
+  "policy_presets": [
+    {
+      "name": "Baseline Uncapped Traffic (119 km/h, Current Compliance)",
+      "max_speed_cap": 119,
+      "target_helmet_rate": 0.50,
+      "target_seatbelt_rate": 0.50
+    },
+    {
+      "name": "Provincial Highway Cap (85 km/h + 85% Restraint Mandate)",
+      "max_speed_cap": 85,
+      "target_helmet_rate": 0.85,
+      "target_seatbelt_rate": 0.85
+    },
+    {
+      "name": "Urban Safe-Corridor Policy (80 km/h Cap + 95% Seatbelt / 90% Helmet)",
+      "max_speed_cap": 80,
+      "target_helmet_rate": 0.90,
+      "target_seatbelt_rate": 0.95
+    },
+    {
+      "name": "Vision Zero City Zone (60 km/h Cap + 98% Full Restraint Mandate)",
+      "max_speed_cap": 60,
+      "target_helmet_rate": 0.98,
+      "target_seatbelt_rate": 0.98
+    }
+  ],
+  "ui_theme": {
+    "header_bg": "#1E293B",
+    "primary_blue": "#0F4C81",
+    "accent_crimson": "#C8102E",
+    "accent_teal": "#0D9488",
+    "panel_bg": "#F8FAFC"
+  }
+}
