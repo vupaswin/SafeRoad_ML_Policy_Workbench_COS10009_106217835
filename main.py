@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Module 8: main.py
 COS10009 Introduction to Programming — Root Application Entry Point
@@ -37,7 +36,9 @@ def main() -> None:
     run_rq3_scaling_benchmarks(app_state)
     summary = export_benchmark_summary(app_state, base_dir)
 
-    headless_flag: bool = ("--headless" in sys.argv) or (os.environ.get("DISPLAY", "") == "")
+    headless_flag: bool = ("--headless" in sys.argv) or (
+        sys.platform != "win32" and sys.platform != "darwin" and os.environ.get("DISPLAY", "") == ""
+    )
     if headless_flag:
         print_console_report(summary)
     else:

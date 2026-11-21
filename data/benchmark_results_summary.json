@@ -5,8 +5,8 @@
   "dedup_split": "479 Train / 120 Test (80/20)",
   "sqlite_table_counts": {
     "crash_records": 599,
-    "model_benchmarks": 60,
-    "policy_simulations": 40
+    "model_benchmarks": 96,
+    "policy_simulations": 96
   },
   "kinetic_cliff_profile": {
     "total_records": 599.0,
@@ -32,7 +32,7 @@
       "recall_pct": 67.11,
       "specificity_pct": 90.85,
       "f1_pct": 71.83,
-      "train_time_ms": 11.874
+      "train_time_ms": 11.851
     },
     {
       "model_name": "Weighted Linear Score",
@@ -46,7 +46,7 @@
       "recall_pct": 48.68,
       "specificity_pct": 87.8,
       "f1_pct": 55.64,
-      "train_time_ms": 351.904
+      "train_time_ms": 343.631
     },
     {
       "model_name": "Subgroup Rate Average",
@@ -60,7 +60,7 @@
       "recall_pct": 38.16,
       "specificity_pct": 85.98,
       "f1_pct": 45.31,
-      "train_time_ms": 0.218
+      "train_time_ms": 0.161
     },
     {
       "model_name": "Rule-Based Decision Tree",
@@ -74,7 +74,7 @@
       "recall_pct": 78.95,
       "specificity_pct": 78.05,
       "f1_pct": 69.77,
-      "train_time_ms": 3.678
+      "train_time_ms": 3.575
     },
     {
       "model_name": "Weighted Linear Score",
@@ -88,7 +88,7 @@
       "recall_pct": 44.74,
       "specificity_pct": 89.02,
       "f1_pct": 53.12,
-      "train_time_ms": 169.22
+      "train_time_ms": 172.041
     },
     {
       "model_name": "Subgroup Rate Average",
@@ -102,7 +102,7 @@
       "recall_pct": 55.26,
       "specificity_pct": 73.17,
       "f1_pct": 51.85,
-      "train_time_ms": 0.076
+      "train_time_ms": 0.074
     }
   ],
   "policy_simulations": [
@@ -157,7 +157,7 @@
       "complexity": "O(N)",
       "N": 600,
       "K": 100,
-      "elapsed_ms": 4.1897,
+      "elapsed_ms": 4.1315,
       "peak_memory_kb": 137.4,
       "comparisons": 60000,
       "passes_60fps": true
@@ -167,7 +167,7 @@
       "complexity": "O(log N)",
       "N": 600,
       "K": 100,
-      "elapsed_ms": 0.2122,
+      "elapsed_ms": 0.2212,
       "peak_memory_kb": 140.2,
       "comparisons": 1800,
       "passes_60fps": true
@@ -177,7 +177,7 @@
       "complexity": "O(1)",
       "N": 600,
       "K": 100,
-      "elapsed_ms": 0.0107,
+      "elapsed_ms": 0.0119,
       "peak_memory_kb": 156.5,
       "comparisons": 100,
       "passes_60fps": true
@@ -187,7 +187,7 @@
       "complexity": "O(N)",
       "N": 5000,
       "K": 100,
-      "elapsed_ms": 37.488,
+      "elapsed_ms": 35.8937,
       "peak_memory_kb": 1202.1,
       "comparisons": 500000,
       "passes_60fps": false
@@ -197,7 +197,7 @@
       "complexity": "O(log N)",
       "N": 5000,
       "K": 100,
-      "elapsed_ms": 0.3138,
+      "elapsed_ms": 0.3233,
       "peak_memory_kb": 1226.1,
       "comparisons": 2400,
       "passes_60fps": true
@@ -207,7 +207,7 @@
       "complexity": "O(1)",
       "N": 5000,
       "K": 100,
-      "elapsed_ms": 0.0097,
+      "elapsed_ms": 0.0116,
       "peak_memory_kb": 1354.1,
       "comparisons": 100,
       "passes_60fps": true
@@ -217,7 +217,7 @@
       "complexity": "O(N)",
       "N": 20000,
       "K": 100,
-      "elapsed_ms": 156.4029,
+      "elapsed_ms": 151.1159,
       "peak_memory_kb": 4849.2,
       "comparisons": 2000000,
       "passes_60fps": false
@@ -227,7 +227,7 @@
       "complexity": "O(log N)",
       "N": 20000,
       "K": 100,
-      "elapsed_ms": 0.5374,
+      "elapsed_ms": 1.3476,
       "peak_memory_kb": 4946.2,
       "comparisons": 2800,
       "passes_60fps": true
@@ -237,7 +237,7 @@
       "complexity": "O(1)",
       "N": 20000,
       "K": 100,
-      "elapsed_ms": 0.01,
+      "elapsed_ms": 0.0114,
       "peak_memory_kb": 5457.3,
       "comparisons": 100,
       "passes_60fps": true
@@ -247,7 +247,7 @@
       "complexity": "O(N)",
       "N": 50000,
       "K": 100,
-      "elapsed_ms": 383.0354,
+      "elapsed_ms": 393.6404,
       "peak_memory_kb": 12162.2,
       "comparisons": 5000000,
       "passes_60fps": false
@@ -257,7 +257,7 @@
       "complexity": "O(log N)",
       "N": 50000,
       "K": 100,
-      "elapsed_ms": 0.9755,
+      "elapsed_ms": 1.1677,
       "peak_memory_kb": 12405.5,
       "comparisons": 3100,
       "passes_60fps": true
@@ -267,7 +267,7 @@
       "complexity": "O(1)",
       "N": 50000,
       "K": 100,
-      "elapsed_ms": 0.2938,
+      "elapsed_ms": 0.0178,
       "peak_memory_kb": 14978.3,
       "comparisons": 100,
       "passes_60fps": true
